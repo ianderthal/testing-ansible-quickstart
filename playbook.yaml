@@ -11,3 +11,9 @@
    - name: Show OS version
      ansible.builtin.debug:
        var: ansible_facts['distribution']
+
+   - name: Only run on Debian-like systems
+     ansible.builtin.debug:
+       msg: "Debian system detected.:"
+     when: ansible_facts['os_family'] == "Debian"
+
