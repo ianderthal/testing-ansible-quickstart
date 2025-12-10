@@ -7,3 +7,7 @@
    - name: Print message
      ansible.builtin.debug:
        msg: Hello world
+
+   - name: Show OS version
+     ansible.builtin.debug:
+       var: ansible_facts['distribution']
